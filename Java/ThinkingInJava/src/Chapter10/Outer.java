@@ -19,8 +19,10 @@ public class Outer {
             return Outer.this;
         }
 
-        // 内部类可以直接访问外部类的成员变量和成员方法，其实是通过对外部类的引用来访问成员变量和方法
-        // 相当于 Outer.this.outerIndex
+        // 内部类可以直接访问外部类的成员变量和成员方法
+        // 其实是通过对外部类的引用来访问成员变量和方法, 相当于 Outer.this.outerIndex
+        // 不管内部类被嵌套多少层，都能透明地访问所有它所嵌入的外围类的全部成员
+        // 即使成员被定义为private，也可以被内部类直接访问
         private int innerIndex = outerIndex;
 
         // 相当于 Outer.this.setOuterIndex()
@@ -30,10 +32,12 @@ public class Outer {
     }
 
     // protected 只有子类和同一个包下的类可以访问
+    // static 又称为嵌套类
     protected static class InnerStatic{
         // 只能访问外部类的static成员变量和方法
     }
 
+    // private内部类不能被外部直接访问
     private class Contents implements ContentInterface {
         private int i = 10;
 

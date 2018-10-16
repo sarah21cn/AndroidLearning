@@ -46,7 +46,7 @@ Step 7. ApplicationThread把这个启动Activity的操作转发给ActivityThread
 
 ### 启动时间
 
-从 Android 4.4 (API 19) 开始，Logcat 自动帮我们打印出应用的启动时间。这个时间值从应用启动 (创建进程) 开始计算，到完成视图的第一次绘制 (即 Activity 内容对用户可见) 为止。**搜索Displayed**
+从 Android 4.4 (API 19) 开始，Logcat 自动帮我们打印出应用的启动时间。这个时间值从应用启动 (创建进程) 开始计算，到完成视图的第一次绘制 (即 Activity 内容对用户可见) 为止。**搜索Displayed可以看到每个activity的启动时长**
 
 ### 优化方案
 
